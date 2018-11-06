@@ -12,9 +12,24 @@ import MODEL.PETA;
  * @author user only
  */
 public class testing1 {
+
     public static void main(String[] args) {
         PETA test = new PETA();
-        test.setIsi("@#@#@#@#");
-        System.out.println(test.getIsi());
+        System.out.println(" LAPANGAN YANG AKAN DIHITUNG ");
+        
+        test.setIsi("######"
+                + "\n#...O#"
+                + "\n#..O.#"
+                + "\n######");
+        System.out.println("--------------------------------");
+        System.out.println(""+test.getIsi());
+        System.out.println("--------------------------------");
+        int jumlahKress = test.HitungKress();
+        System.out.println(" Jumlah Kress    = " + jumlahKress);
+        int jumlahDot = test.HitungDOT();
+        System.out.println(" Jumlah Dot      = "+ jumlahDot);
+        int jumlahO = test.HitungO();
+        System.out.println(" Jumlah O        = "+jumlahO);
+        
     }
 }

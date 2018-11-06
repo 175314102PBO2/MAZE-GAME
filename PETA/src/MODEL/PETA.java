@@ -51,7 +51,7 @@ public class PETA {
         FileInputStream fis;
         try {
             fis = new FileInputStream(file);
-            String hasil = ".";
+            String hasil = "";
             int dataInt;
             while ((dataInt = fis.read()) != -1) {
                 hasil = hasil + (char) dataInt;
@@ -74,16 +74,42 @@ public class PETA {
     }
 
     public int HitungKress() {
-        return isi.split("#").length;
+        int jumlah = 0;
+        String[] data = getIsi().split("");
+        for (int i = 0; i < data.length; i++) {
+            if (data[i].equals("#")) {
+                jumlah = jumlah + 1;
+            }
+        }
+        return jumlah;
     }
 
     public int HitungO() {
-        return isi.split("O").length;
+        //awal mulanya adalah 0, dikarenakan belum ada data yang dihiung
+        int jumlah = 0;
+        //untuk mendapatkan data yang telah ada
+        String[] data = getIsi().split("");
+        //perulangan sebanyak panjang data yang ada
+        for (int i = 0; i < data.length; i++) {
+            //percabangan jika data yang ada adalah O
+            if (data[i].equals("O")) {
+                //jika datanya adalah O, maka jumlahnya akan ditambah dengan1, hingga semua data O terjumlahkan.
+                jumlah = jumlah + 1;
+            }
+        }
+        return jumlah;
 
     }
 
     public int HitungDOT() {
-        return isi.split(".").length;
+        int jumlah = 0;
+        String[] data = getIsi().split("");
+        for (int i = 0; i < data.length; i++) {
+            if (data[i].equals(".")) {
+                jumlah = jumlah + 1;
+            }
+        }
+        return jumlah;
 
     }
 
